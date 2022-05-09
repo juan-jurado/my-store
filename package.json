@@ -1,0 +1,33 @@
+{
+  "name": "my-store",
+  "version": "1.0.0",
+  "description": "Online Store",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "lint": "eslint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/juan-jurado/my-store.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.1",
+    "nodemon": "^2.0.12",
+    "prettier": "^2.3.2"
+  },
+  "bugs": {
+    "url": "https://github.com/juan-jurado/my-store/issues"
+  },
+  "homepage": "https://github.com/juan-jurado/my-store#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "faker": "^5.5.3"
+  }
+}
