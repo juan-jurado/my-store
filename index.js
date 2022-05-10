@@ -5,11 +5,15 @@ const faker = require('faker');
 const app = express();
 
 //puerto en el que quiero correr
-const port = 3000; //Puede estar sobre los 3000
+const port = 3001; //Puede estar sobre los 3000
 
 //definir una ruta
 app.get('/', (req, res) => {
   res.send('Hola, mi server en express');
+});
+
+app.get('/products/filter', (req, res) => {
+  res.send('yo soy un filtro');
 });
 
 app.get('/api', (req, res) => {
@@ -29,7 +33,9 @@ app.get('/prod', (req, res) => {
 
 app.get('/products', (req, res) => {
   const products = [];
-  for (let index = 0; index < 100; index++){
+  const { size } = req.query;
+  const limit = size || 10;
+  for (let index = 0; index < limit; index++){
     products.push({
       name: faker.commerce.productName(),
       price: parseInt(faker.commerce.price(),10),
@@ -73,6 +79,8 @@ app.get('/users', (req, res) => {
     res.send('No hay parámetros');
   }
 });
+
+
 
 app.listen(port, () =>  {
   console.log('Im alive in the port ' + port);
